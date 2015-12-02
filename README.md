@@ -11,4 +11,6 @@ Stack used
     Mocha
     Istanbul
     Travis
-    
+
+
+CI - https://travis-ci.org/oleksii-novakov/tdd-bdd
