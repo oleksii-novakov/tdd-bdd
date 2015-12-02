@@ -1,0 +1,1 @@
+{"version":3,"sources":["../app.css"],"names":[],"mappings":";AACA;IACI,sBAAqB;IACrB,qBAAc;IACjB,cAAA;CACA","file":"../app.css","sourcesContent":[".flex {\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n}\n/*# sourceMappingURL=app.css.map */"]}
