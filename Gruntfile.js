@@ -36,15 +36,21 @@ module.exports = function(grunt) {
         },
         watch: {
             scripts: {
-                files: ['test/*.js'],
-                tasks: ['mocha'],
+                files: ['*.js'],
+                tasks: ['mochaTest'],
                 options: {
                     spawn: false
                 }
             }
         },
-        mocha: {
+        mochaTest: {
             test: {
+                options: {
+                    reporter: 'spec',
+                    captureFile: 'results.txt', // Optionally capture the reporter output to a file
+                    quiet: false, // Optionally suppress output to standard out (defaults to false)
+                    clearRequireCache: true // Optionally clear the require cache before running tests (defaults to false)
+                },
                 src: ['test/*.js']
             }
         }
@@ -53,10 +59,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-mocha');
+    grunt.loadNpmTasks('grunt-mocha-test');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('tests', ['watch']);
-    grunt.registerTask('release', ['postcss', 'concat', 'uglify', 'mocha']);
+    grunt.registerTask('tests', ['mochaTest', 'watch']);
+    grunt.registerTask('release', ['postcss', 'concat', 'uglify', 'mochaTest']);
     grunt.registerTask('develop', ['postcss', 'watch']);
 };
