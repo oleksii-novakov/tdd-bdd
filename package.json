@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "postinstall": "jspm install && jspm bundle index index_bundle.js && grunt"
+    "postinstall": "jspm install",
+    "develop": "jspm bundle index index_bundle.js && grunt develop",
+    "release": "jspm bundle index index_bundle.js && grunt release"
   },
   "keywords": [],
   "author": "Oleksii_Novakov",
@@ -15,6 +17,8 @@
     "grunt": "^0.4.5",
     "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-uglify": "^0.10.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-mocha": "^0.4.15",
     "grunt-postcss": "^0.7.1",
     "jspm": "^0.16.14",
     "mocha": "^2.3.3",

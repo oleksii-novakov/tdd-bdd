@@ -33,12 +33,30 @@ module.exports = function(grunt) {
                     'src/app.min.js': ['src/app.js']
                 }
             }
+        },
+        watch: {
+            scripts: {
+                files: ['test/*.js'],
+                tasks: ['mocha'],
+                options: {
+                    spawn: false
+                }
+            }
+        },
+        mocha: {
+            test: {
+                src: ['test/*.js']
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-mocha');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['postcss', 'concat', 'uglify']);
+    grunt.registerTask('tests', ['watch']);
+    grunt.registerTask('release', ['postcss', 'concat', 'uglify', 'mocha']);
+    grunt.registerTask('develop', ['postcss', 'watch']);
 };
