@@ -1,4 +1,14 @@
+env:
+  global:
+    - secure: "C6UvABhN9LhmZXZ0a9WD7SQ1edWG6auks8tUZl3ROsFPMbdHS6reIz05m2vP6iXU+Ep2
+    +gcWDVTdK6NPUr+BycsHTgKMrBLeFHssleJFJKrwYhe+t6Dk47eaD8pZJgqhVwB4rMelIiuaxAOxwULnhnRtBEzbYHHG97QyaxVNkqIfG5GhXXX9KY+sy1Rv94S7JfUP8RHay0TtNzrdyilkjxMJS8O3iZMstdBJmWqnGXUyUUZB3WrVUrIRFgauOSLOTAyjhTmp4xyd2hTuYqMpopQydX0zl41NL/54NtiMFzPpWPd+ISYoqi7Ii3x2f/q+FekRoJDARne1683wjCVmMuj2aUaSxD9gIgul7voLpQlGyS0GK+2en9vAK/tIx3ChnbSRHaFMqAXANJIGuUrkQGNq0TNubo05bR5QSmPj5qKcSun/xE31BEo786SPHY0y7gKlGxdE5+r6VT1yu17hjUPoiIXQeqrgCALHmjmKOM+jlAzm86uUn2Xh8syFw1BImRswvh+u/pdJOnfQVM/zLn6C1eaHqu2xMTSqtynM8CVWMIiGZ5jF0MfHxCK+8p8hNDc4WEsmyiSfoorbKiEuWGhBoCdCDQQIWtFkn8YD+qlp25F6V4ymRCwLkg3eBHSLdd3Idw4UoBsV4S1sKEVfXSj96yGb1rPcrQ3YEvMADho="
+
 language: node_js
-before_install: npm install -g grunt-cli
+
+before_install:
+- npm install -g jspm
+- jspm config registries.github.auth $JSPM_GITHUB_AUTH_TOKEN
+- npm install -g grunt-cli
+
 install: npm install
 script: npm run release
