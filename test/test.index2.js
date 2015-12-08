@@ -1,7 +1,7 @@
 var assert = require('assert'),
-    squareNum = require('../index2.js').squareNum;
+    app = require('../index2.js').app;
 
-describe('squareNum()', function() {
+describe('app.squareNum()', function() {
     var tests = [
         {args: 2,    expected: 4},
         {args: 3,    expected: 9}
@@ -9,7 +9,7 @@ describe('squareNum()', function() {
 
     tests.forEach(function(test) {
         it('correct multiply', function() {
-            var res = squareNum(test.args);
+            var res = app.squareNum(test.args);
             assert.equal(res, test.expected);
         });
     });

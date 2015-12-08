@@ -654,8 +654,21 @@ System.register('index.js', ['npm:lodash-node@3.10.1/modern/lang/isEqual'], func
     };
 });
 //# sourceMappingURL=index_bundle.js.map
-function squareNum(num) {
-    return num * num;
-}
+var app = {};
 
-module.exports.squareNum = squareNum;
+app.squareNum = function(num) {
+    return num * num;
+};
+
+app.toggleElem = function(elem) {
+    var targetElem = document.getElementById(elem),
+        targetElemState = targetElem.style.display;
+
+    if(targetElemState == 'block' || targetElemState == "") {
+        targetElem.style.display = "none";
+    } else {
+        targetElem.style.display = "block";
+    }
+};
+
+module.exports.app = app;

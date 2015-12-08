@@ -9,6 +9,8 @@ Stack used
     Grunt concat
     Grunt uglify
     Mocha
+    Mocha cucumber
+    Chai
     Istanbul
     Travis
 

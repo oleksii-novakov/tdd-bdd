@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "mocha && mocha --ui mocha-cucumber test/bdd/*",
     "postinstall": "jspm install",
     "build": "jspm bundle index index_bundle.js",
     "develop": "npm run build && grunt develop",
@@ -15,6 +15,7 @@
   "description": "",
   "devDependencies": {
     "autoprefixer": "^6.1.0",
+    "chai": "^3.4.1",
     "grunt": "^0.4.5",
     "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-uglify": "^0.10.0",
@@ -23,6 +24,7 @@
     "grunt-postcss": "^0.7.1",
     "jspm": "^0.16.14",
     "mocha": "^2.3.3",
+    "mocha-cucumber": "0.0.5",
     "postcss": "^5.0.11"
   },
   "jspm": {

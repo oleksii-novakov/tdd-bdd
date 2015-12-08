@@ -1,5 +1,7 @@
-function squareNum(num) {
-    return num * num;
-}
+var app = {};
 
-module.exports.squareNum = squareNum;
+app.squareNum = function(num) {
+    return num * num;
+};
+
+module.exports.app = app;
